@@ -22,7 +22,7 @@ sub _create_cipher {
 	$padding_character = $settings->{padding_character} || '!';
 	die "Configuration error: padding_character must be 1 character long for Dancer::Plugin::EncodeID. Please see documentation regarding proper configuration." unless length($padding_character)==1;
 
-	$cipher = new Crypt::Blowfish ( $secret ) ;
+	$cipher = Crypt::Blowfish->new ( $secret ) ;
 }
 
 register encode_id => sub {
@@ -101,7 +101,7 @@ register decode_id => sub {
 	return $cleartext;
 };
 
-register_plugin;
+register_plugin for_versions => [ 1, 2 ];
 
 # ABSTRACT: A Dancer plugin for Encoding/Obfuscating IDs in URLs
 
