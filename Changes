@@ -1,9 +1,12 @@
 Revision history for Dancer-Plugin-EncodeID
 
+0.03
+    - Now compatible with Dancer 2.
+
 0.02	2011-12-21,agn
-	Added "prefix" option to encode_id/decode_id.
-	Added command-line encoder in ./eg/ folder.
+	- Added "prefix" option to encode_id/decode_id.
+	- Added command-line encoder in ./eg/ folder.
 
 0.01    2011-09-12, agn
-        First version, based on Dancer-Plugin-MobileDevice source files.
+     -  First version, based on Dancer-Plugin-MobileDevice source files.
 
