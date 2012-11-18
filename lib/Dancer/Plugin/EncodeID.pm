@@ -26,6 +26,8 @@ sub _create_cipher {
 }
 
 register encode_id => sub {
+    shift if Dancer->VERSION >= 2;
+
 	my $cleartext_id = shift;
 	die "Missing Clear text ID parameter" unless defined $cleartext_id;
 
@@ -54,6 +56,8 @@ register encode_id => sub {
 };
 
 register valid_encoded_id => sub {
+    shift if Dancer->VERSION >= 2;
+
 	my $encoded_id = shift or die "Missing Encoded ID parameter";
 
 	return 0 unless $encoded_id =~ /^[0-9A-F]+$/i;
@@ -62,6 +66,8 @@ register valid_encoded_id => sub {
 };
 
 register decode_id => sub {
+    shift if Dancer->VERSION >= 2;
+
 	my $encoded_id = shift or die "Missing Encoded ID parameter";
 	my $orig_encoded_id = $encoded_id;
 
